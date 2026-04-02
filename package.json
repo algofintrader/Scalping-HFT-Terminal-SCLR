@@ -1,0 +1,36 @@
+{
+  "name": "sclr",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:server": "turbo dev --filter=@sclr/server",
+    "dev:web": "turbo dev --filter=@sclr/web",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "deploy": "./deploy/deploy.sh",
+    "deploy:dev": "./deploy/deploy-dev.sh",
+    "deploy:logs": "bash -c 'source deploy/.deploy.env && ssh ${USER}@${SERVER} journalctl -u sclr-server -f'",
+    "deploy:dev:logs": "bash -c 'source deploy/.deploy.env && ssh ${USER}@${SERVER} journalctl -u sclr-server-dev -f'",
+    "stress-test": "npx playwright test scripts/stress-test.ts --config=scripts/playwright.stress.config.ts",
+    "stress-test:quick": "npx playwright test scripts/stress-test-quick.ts --config=scripts/playwright.stress.config.ts",
+    "latency-test": "npx playwright test scripts/latency-test.ts --config=scripts/playwright.stress.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.1",
+  "engines": {
+    "node": ">=20"
+  }
+}

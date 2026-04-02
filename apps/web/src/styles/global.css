@@ -1,0 +1,70 @@
+:root {
+  /* Colors */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1a1a1a;
+
+  --text-primary: #e0e0e0;
+  --text-secondary: #888888;
+  --text-muted: #555555;
+
+  --accent-green: #00c853;
+  --accent-green-dim: rgba(0, 200, 83, 0.3);
+  --accent-red: #ff1744;
+  --accent-red-dim: rgba(255, 23, 68, 0.3);
+
+  --border-color: #2a2a2a;
+
+  /* Volume colors */
+  --volume-1: #ffeb3b; /* желтый */
+  --volume-2: #9c27b0; /* фиолетовый */
+
+  /* Spacing */
+  --header-height: 48px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-tertiary) var(--bg-secondary);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* Reset */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+input, select {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font: inherit;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-green);
+}

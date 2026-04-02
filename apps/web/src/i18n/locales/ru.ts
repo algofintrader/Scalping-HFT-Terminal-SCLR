@@ -1,0 +1,87 @@
+import type { Translations } from '../types';
+
+export const ru: Translations = {
+  auth: {
+    login: 'Вход',
+    register: 'Регистрация',
+    logout: 'Выйти',
+    guest: 'Профиль',
+    email: 'Email',
+    password: 'Пароль',
+    confirmPassword: 'Повторите пароль',
+    minChars: 'Минимум 6 символов',
+    submit: {
+      login: 'Войти',
+      register: 'Создать аккаунт',
+    },
+    later: 'Позже',
+    loading: 'Загрузка...',
+    errors: {
+      enterEmail: 'Введите email',
+      invalidEmail: 'Некорректный email',
+      enterPassword: 'Введите пароль',
+      passwordMinLength: 'Пароль должен быть не менее 6 символов',
+      passwordMismatch: 'Пароли не совпадают',
+      authError: 'Ошибка авторизации',
+    },
+    tradeRequiresAuth: 'Для торговли необходимо войти в аккаунт',
+    buy: 'Покупка',
+    sell: 'Продажа',
+  },
+
+  migration: {
+    title: 'Обнаружены сохранённые настройки',
+    description: 'У вас есть настройки на этом устройстве и на сервере. Какие использовать?',
+    local: 'Текущие (локальные)',
+    server: 'Сохранённые (сервер)',
+    instruments: 'Инструменты',
+    noInstruments: 'Нет инструментов',
+    autoScroll: 'Автоскролл',
+    on: 'Вкл',
+    off: 'Выкл',
+    keepLocal: 'Оставить текущие',
+    loadServer: 'Загрузить',
+    decideLater: 'Решить позже',
+  },
+
+  loading: {
+    connecting: 'Подключение к серверу...',
+    subscribing: 'Подписка на {symbol}...',
+    loadingOrderbook: 'Загрузка стакана...',
+    loadingClusters: 'Загрузка кластеров...',
+    server: 'Сервер',
+    connected: 'Подключено',
+    orderbook: 'Стакан',
+    clusters: 'Кластеры',
+    tickChart: 'Тик-чарт',
+    waiting: 'Ожидание...',
+    waitingTrades: 'Ожидание сделок...',
+    levels: 'уровней',
+    columns: 'колонок',
+    ticks: 'тиков',
+    // Retry and errors
+    retrying: 'Повторная попытка',
+    connectionFailed: 'Ошибка подключения',
+    retry: 'Повторить',
+    failed: 'Ошибка',
+    attempt: 'Попытка',
+  },
+
+  ui: {
+    addSymbol: 'Добавить символ',
+    noSymbols: 'Нет доступных символов',
+    autoScroll: 'AUTO',
+    autoScrollHint: 'Автоскролл: {status} (Shift для переключения)',
+    settings: 'Настройки',
+    select: 'Выбрать',
+    active: 'Активные',
+    addNew: 'Добавить',
+    selectInstrument: 'Выберите инструмент',
+    volPrice: 'Объём | Цена',
+    beta: 'Beta',
+  },
+
+  common: {
+    loading: 'Загрузка...',
+  },
+};

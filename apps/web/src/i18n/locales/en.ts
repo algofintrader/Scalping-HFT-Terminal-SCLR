@@ -1,0 +1,87 @@
+import type { Translations } from '../types';
+
+export const en: Translations = {
+  auth: {
+    login: 'Login',
+    register: 'Register',
+    logout: 'Logout',
+    guest: 'Profile',
+    email: 'Email',
+    password: 'Password',
+    confirmPassword: 'Confirm password',
+    minChars: 'Minimum 6 characters',
+    submit: {
+      login: 'Sign In',
+      register: 'Create Account',
+    },
+    later: 'Later',
+    loading: 'Loading...',
+    errors: {
+      enterEmail: 'Enter email',
+      invalidEmail: 'Invalid email',
+      enterPassword: 'Enter password',
+      passwordMinLength: 'Password must be at least 6 characters',
+      passwordMismatch: 'Passwords do not match',
+      authError: 'Authentication error',
+    },
+    tradeRequiresAuth: 'Please log in to trade',
+    buy: 'Buy',
+    sell: 'Sell',
+  },
+
+  migration: {
+    title: 'Settings found',
+    description: 'You have settings on this device and on the server. Which ones to use?',
+    local: 'Current (local)',
+    server: 'Saved (server)',
+    instruments: 'Instruments',
+    noInstruments: 'No instruments',
+    autoScroll: 'Auto-scroll',
+    on: 'On',
+    off: 'Off',
+    keepLocal: 'Keep current',
+    loadServer: 'Load',
+    decideLater: 'Decide later',
+  },
+
+  loading: {
+    connecting: 'Connecting to server...',
+    subscribing: 'Subscribing to {symbol}...',
+    loadingOrderbook: 'Loading orderbook...',
+    loadingClusters: 'Loading clusters...',
+    server: 'Server',
+    connected: 'Connected',
+    orderbook: 'Orderbook',
+    clusters: 'Clusters',
+    tickChart: 'Tick chart',
+    waiting: 'Waiting...',
+    waitingTrades: 'Waiting for trades...',
+    levels: 'levels',
+    columns: 'columns',
+    ticks: 'ticks',
+    // Retry and errors
+    retrying: 'Retrying',
+    connectionFailed: 'Connection failed',
+    retry: 'Retry',
+    failed: 'Failed',
+    attempt: 'Attempt',
+  },
+
+  ui: {
+    addSymbol: 'Add Symbol',
+    noSymbols: 'No symbols available',
+    autoScroll: 'AUTO',
+    autoScrollHint: 'Auto-scroll: {status} (Shift to toggle)',
+    settings: 'Settings',
+    select: 'Select',
+    active: 'Active',
+    addNew: 'Add new',
+    selectInstrument: 'Select an instrument to view',
+    volPrice: 'Vol | Price',
+    beta: 'Beta',
+  },
+
+  common: {
+    loading: 'Loading...',
+  },
+};

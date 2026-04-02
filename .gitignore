@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.turbo/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+
+# Misc
+*.tsbuildinfo
+
+# Stress test reports
+scripts/reports/
+
+# Deploy secrets
+deploy/.deploy.env
+
+# Session logs
+session_log.txt
+full_session_log.txt
+
+# Server data
+apps/server/data/
+
+# Test results
+test-results/
+
+# Reports
+report.html
+
+# Dev tool configs
+.claude/
+.mcp.json
+CLAUDE.md
+.ai_context/
+
+# Debug screenshots
+test_images/

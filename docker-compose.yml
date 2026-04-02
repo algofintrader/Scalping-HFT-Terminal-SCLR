@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+  server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+      target: dev
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./apps/server/src:/app/apps/server/src:ro
+      - ./packages/shared/src:/app/packages/shared/src:ro
+    environment:
+      - PORT=3001
+      - MONGODB_URL=mongodb://mongo:27017
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+volumes:
+  mongo-data:

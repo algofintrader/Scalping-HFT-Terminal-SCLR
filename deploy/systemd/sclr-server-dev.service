@@ -1,0 +1,35 @@
+# SCLR Server DEV - systemd service
+# Managed by deploy/deploy-dev.sh - DO NOT EDIT MANUALLY ON SERVER
+
+[Unit]
+Description=SCLR Trading Terminal Backend (DEV)
+After=network.target mongodb.service
+Wants=mongodb.service
+
+[Service]
+Type=simple
+User=sclr
+Group=sclr
+WorkingDirectory=/opt/sclr-dev/server
+
+# Environment - DEV uses port 3002
+Environment=NODE_ENV=development
+Environment=PORT=3002
+EnvironmentFile=-/opt/sclr-dev/server/.env
+
+# Start command
+ExecStart=/home/sclr/.bun/bin/bun src/index.ts
+
+# Restart policy
+Restart=always
+RestartSec=5
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sclr-server-dev
+
+[Install]
+WantedBy=multi-user.target

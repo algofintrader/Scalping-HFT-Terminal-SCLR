@@ -1,0 +1,38 @@
+# SCLR Server - systemd service
+# Managed by deploy/deploy.sh - DO NOT EDIT MANUALLY ON SERVER
+#
+# Install: cp sclr-server.service /etc/systemd/system/
+# Enable:  systemctl enable sclr-server
+# Start:   systemctl start sclr-server
+# Logs:    journalctl -u sclr-server -f
+
+[Unit]
+Description=SCLR Trading Terminal Backend
+After=network.target mongodb.service
+Wants=mongodb.service
+
+[Service]
+Type=simple
+User=sclr
+Group=sclr
+WorkingDirectory=/opt/sclr/server
+
+# Environment
+Environment=NODE_ENV=production
+Environment=PORT=3001
+EnvironmentFile=-/opt/sclr/server/.env
+
+# Start command
+ExecStart=/home/sclr/.bun/bin/bun src/index.ts
+
+# Restart policy
+Restart=always
+RestartSec=5
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sclr-server
+
+[Install]
+WantedBy=multi-user.target
