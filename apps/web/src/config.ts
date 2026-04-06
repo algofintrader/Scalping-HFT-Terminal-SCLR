@@ -65,7 +65,7 @@ export const CLIENT_CONFIG = {
   },
 
   auth: {
-    apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001',
+    apiBaseUrl: import.meta.env.DEV ? 'http://localhost:3001' : '/api',
     guestSyncDebounceMs: 2000,
   },
 } as const;
